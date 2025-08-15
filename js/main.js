@@ -12,8 +12,23 @@ function initMobileNav() {
   const toggle = qs('[data-nav-toggle]');
   const nav = qs('[data-nav]');
   if (!toggle || !nav) return;
+  const setExpanded = (open) => toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  setExpanded(false);
   toggle.addEventListener('click', () => {
     nav.classList.toggle('is-open');
+    setExpanded(nav.classList.contains('is-open'));
+  });
+  qsa('.nav__link').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('is-open');
+      setExpanded(false);
+    });
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      nav.classList.remove('is-open');
+      setExpanded(false);
+    }
   });
 }
 
