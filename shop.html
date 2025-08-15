@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Shop — Favour Collection</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+	<header class="header">
+		<div class="container header__inner">
+			<a href="/index.html" class="header__brand">
+				<img class="header__logo" src="/images/logo.svg" alt="Favour Collection logo" onerror="this.style.display='none'">
+				<div>
+					<div class="header__title">Favour Collection</div>
+					<div class="header__tagline">Offering Quality</div>
+				</div>
+			</a>
+			<nav class="header__nav" data-nav>
+				<ul class="nav__list">
+					<li><a class="nav__link" href="/index.html">Home</a></li>
+					<li><a class="nav__link" href="/shop.html">Shop</a></li>
+					<li><a class="nav__link" href="/about.html">About</a></li>
+					<li><a class="nav__link" href="/blog.html">Blog</a></li>
+					<li><a class="nav__link" href="/contact.html">Contact</a></li>
+				</ul>
+			</nav>
+			<div class="header__actions">
+				<div class="header__search">
+					<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 21L15.8 15.8M10.8 18.6C6.7 18.6 3.4 15.3 3.4 11.2C3.4 7.1 6.7 3.8 10.8 3.8C14.9 3.8 18.2 7.1 18.2 11.2C18.2 15.3 14.9 18.6 10.8 18.6Z" stroke="#6F6F6F" stroke-width="1.6" stroke-linecap="round"/></svg>
+					<input type="search" placeholder="Search products" aria-label="Search products" data-search-input>
+				</div>
+				<button class="header__toggle" data-nav-toggle>
+					<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6H20M4 12H20M4 18H20" stroke="#1E1E1E" stroke-width="1.8" stroke-linecap="round"/></svg>
+				</button>
+				<button class="header__cart-btn" data-cart-open>
+					<span>Cart</span>
+					<span data-cart-count>0</span>
+				</button>
+			</div>
+		</div>
+	</header>
+
+	<main class="section">
+		<div class="container">
+			<div class="section__head">
+				<h1 class="h2">Shop</h1>
+			</div>
+
+			<div class="filter-bar">
+				<button class="filter-bar__btn is-active" data-filter="all">All</button>
+				<button class="filter-bar__btn" data-filter="blazers">Blazers</button>
+				<button class="filter-bar__btn" data-filter="dresses">Dresses</button>
+				<button class="filter-bar__btn" data-filter="shirts">Shirts</button>
+			</div>
+
+			<div class="grid products-grid" id="productsGrid">
+				<article class="product-card" data-product-card data-id="p1" data-name="Camel Blazer" data-category="blazers" data-price="45000">
+					<div class="product-card__image"><img src="https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80&w=800&auto=format&fit=crop" alt="Camel blazer"></div>
+					<div class="product-card__body">
+						<div class="product-card__title">Camel Blazer</div>
+						<div class="product-card__meta"><span>Blazers</span><span>₦45,000</span></div>
+						<div class="product-card__actions">
+							<button class="button button--ghost" data-add-to-cart>Add to cart</button>
+							<a class="button button--primary" data-buy-now>Buy item</a>
+						</div>
+					</div>
+				</article>
+
+				<article class="product-card" data-product-card data-id="p2" data-name="Satin Midi Dress" data-category="dresses" data-price="38500">
+					<div class="product-card__image"><img src="https://images.unsplash.com/photo-1532693322255-0204645f8f3d?q=80&w=800&auto=format&fit=crop" alt="Satin midi dress"></div>
+					<div class="product-card__body">
+						<div class="product-card__title">Satin Midi Dress</div>
+						<div class="product-card__meta"><span>Dresses</span><span>₦38,500</span></div>
+						<div class="product-card__actions">
+							<button class="button button--ghost" data-add-to-cart>Add to cart</button>
+							<a class="button button--primary" data-buy-now>Buy item</a>
+						</div>
+					</div>
+				</article>
+
+				<article class="product-card" data-product-card data-id="p3" data-name="Crisp White Shirt" data-category="shirts" data-price="15000">
+					<div class="product-card__image"><img src="https://images.unsplash.com/photo-1521334580392-88b22e1a901a?q=80&w=800&auto=format&fit=crop" alt="White shirt"></div>
+					<div class="product-card__body">
+						<div class="product-card__title">Crisp White Shirt</div>
+						<div class="product-card__meta"><span>Shirts</span><span>₦15,000</span></div>
+						<div class="product-card__actions">
+							<button class="button button--ghost" data-add-to-cart>Add to cart</button>
+							<a class="button button--primary" data-buy-now>Buy item</a>
+						</div>
+					</div>
+				</article>
+			</div>
+		</div>
+	</main>
+
+	<aside class="cart-drawer" data-cart-drawer>
+		<div class="cart-drawer__overlay" data-cart-overlay></div>
+		<div class="cart-drawer__panel">
+			<div class="cart-drawer__header">
+				<div class="cart-drawer__title">Your Cart (<span data-cart-count>0</span>)</div>
+				<button class="button button--ghost" data-cart-close>Close</button>
+			</div>
+			<div class="cart-drawer__body">
+				<div class="cart-drawer__empty" data-cart-empty>No items yet. Start shopping!</div>
+				<div data-cart-items></div>
+			</div>
+			<div class="cart-drawer__footer">
+				<div class="cart-drawer__summary"><span>Total</span><span data-cart-total>₦0</span></div>
+				<button class="button button--primary button--icon" data-checkout>
+					<span>Buy item on WhatsApp</span>
+				</button>
+			</div>
+		</div>
+	</aside>
+
+	<footer class="footer">
+		<div class="container footer__top">
+			<div class="footer__cols">
+				<div class="footer__brand">
+					<div class="h3">Favour Collection</div>
+					<div class="text-muted">Offering Quality</div>
+					<div class="text-muted">Phone: 09024900729 • Email: favourcollection@gmail.com</div>
+				</div>
+				<div class="footer__col">
+					<h4>Shop</h4>
+					<ul class="footer__links">
+						<li><a href="/shop.html">All Products</a></li>
+						<li><a href="/shop.html#blazers">Blazers</a></li>
+						<li><a href="/shop.html#dresses">Dresses</a></li>
+						<li><a href="/shop.html#shirts">Shirts</a></li>
+					</ul>
+				</div>
+				<div class="footer__col">
+					<h4>Company</h4>
+					<ul class="footer__links">
+						<li><a href="/about.html">About us</a></li>
+						<li><a href="/blog.html">Blog</a></li>
+						<li><a href="/contact.html">Contact</a></li>
+					</ul>
+				</div>
+				<div class="footer__col">
+					<h4>Follow</h4>
+					<ul class="footer__links">
+						<li><a href="https://wa.me/2349024900729" target="_blank" rel="noopener">WhatsApp</a></li>
+						<li><a href="#" aria-disabled="true">Instagram</a></li>
+						<li><a href="#" aria-disabled="true">X/Twitter</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="container footer__bottom">© <span data-year></span> Favour Collection. All rights reserved.</div>
+	</footer>
+
+	<script src="/js/main.js"></script>
+	<script src="/js/cart.js"></script>
+	<script>
+		// Simple filter logic
+		document.addEventListener('DOMContentLoaded', () => {
+			const filterButtons = Array.from(document.querySelectorAll('[data-filter]'));
+			filterButtons.forEach(btn => btn.addEventListener('click', () => {
+				filterButtons.forEach(b => b.classList.remove('is-active'));
+				btn.classList.add('is-active');
+				const category = btn.getAttribute('data-filter');
+				const cards = Array.from(document.querySelectorAll('[data-product-card]'));
+				cards.forEach(card => {
+					const cat = card.getAttribute('data-category');
+					card.style.display = (category === 'all' || cat === category) ? '' : 'none';
+				});
+			}));
+		});
+	</script>
+</body>
+</html>
